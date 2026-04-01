@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var unicyclesRouter = require('./routes/unicycles'); // Added for Part 5
 var gridRouter = require('./routes/grid');           // Added for Part 7
+var pickRouter = require('./routes/pick');           // Added for Part 8
 var app = express();
 
 // view engine setup
@@ -23,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/gridbuild', gridRouter);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-
+app.use('/selector', pickRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
